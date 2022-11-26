@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  background: linear-gradient(to bottom right, rgb(11, 24, 9), rgb(21, 43, 16));
+  flex-wrap: wrap;
+  cursor: grab;
 }
 
 .App-logo {
@@ -35,4 +42,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+#advent-calendar {
+  width: 40vw;
+  min-width: 365px;
+  max-width: 65vh;
+  min-height: 600px;
+  max-height: 900px;
+  background-color: rgb(117, 27, 16);
+  margin: auto;
+  height: 85%;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.644);
+  padding: 0.6rem 0rem;
+  background-size: cover;
+  background-position: center;
+}
+.advent-card {
+  width: 45%;
+  height: 18%;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: wheat;
+  border-radius: 0.4rem;
+  justify-content: center;
+  border: inset rgb(44, 6, 78) 3px;
+  box-shadow: inset 6px 6px 25px 12px rgba(0, 0, 0, 0.507), 0px 0px 5px 3px rgba(48, 7, 0, 0.529);
+  display: flex;
+  padding: 0.6rem;
+    cursor: url('image.png'), auto !important;
+}
+.advent-card p {
+  /* cursor: url('image.png'), auto !important; */
+}
+.closed {
+  border: 2px dashed rgb(79, 58, 87) !important;
+  font-size: 3rem;
+}
+.closed p {
+  /* background-color: rgba(255, 255, 255, 0.541); */
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(245,245,245,0) 70%);
+  border: 3px solid rgba(255, 255, 255, 0.185);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: not-allowed;
+}
+@import url(https://fonts.googleapis.com/css?family=Syne+Mono:regular);
+.advent-card p {
+  margin: auto;
+  font-weight: 800;
+  text-align: center;
+  font-family: 'Syne Mono';
 }
