@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 const Card = ({days, pic, i, currentCard}) => {
-    const month = 10
+    const month = 11
     return(
         <div
         className={`advent-card ${days[i] <= new Date().getDate() &&
