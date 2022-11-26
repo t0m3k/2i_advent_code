@@ -1,4 +1,4 @@
-<img src="./src/lightsGif.gif" data-canonical-src="./src/lightsGif.gif" width="50%" />
+<img src="./src/lightsGif.gif" data-canonical-src="./src/lightsGif.gif" width="100%" />
 
 # 2i Mini Advent of Code!
 
