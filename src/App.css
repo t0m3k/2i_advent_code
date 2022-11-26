@@ -7,6 +7,7 @@
   background: linear-gradient(to bottom right, rgb(11, 24, 9), rgb(21, 43, 16));
   flex-wrap: wrap;
   cursor: grab;
+flex-direction: column;
 }
 
 .App-logo {
@@ -51,7 +52,7 @@
   max-height: 900px;
   background-color: rgb(117, 27, 16);
   margin: auto;
-  height: 85%;
+  height: 80%;
   border-radius: 0.4rem;
   display: flex;
   flex-direction: row;
@@ -75,9 +76,7 @@
   padding: 0.6rem;
     cursor: url('image.png'), auto !important;
 }
-.advent-card p {
-  /* cursor: url('image.png'), auto !important; */
-}
+
 .closed {
   border: 2px dashed rgb(79, 58, 87) !important;
   font-size: 3rem;
@@ -99,4 +98,25 @@
   font-weight: 800;
   text-align: center;
   font-family: 'Syne Mono';
+}
+
+#submit-link {
+  height: fit-content;
+  margin: auto;
+
+}
+a:visited, a:link, a:hover, a:active {
+  text-decoration: none;
+  color:rgba(255, 255, 255, 0.644);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .advent-card {
+    font-size: x-small;
+  }
+  #advent-calendar {
+    min-height: unset;
+  }
 }

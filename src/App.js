@@ -65,6 +65,7 @@ function App() {
               />
             ))}
         </div>
+        <a id='submit-link' href='https://github.com/CraigMcleod2i/2i_advent_code' target='_blank'>Submit by adding a branch to this repo</a>
       </div>
     );
 }
