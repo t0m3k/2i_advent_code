@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c696af19.css",
+    "main.js": "/static/js/main.04dff0e4.js",
+    "static/js/787.80fe2b25.chunk.js": "/static/js/787.80fe2b25.chunk.js",
+    "static/media/fairy-lights.jpg": "/static/media/fairy-lights.e63747aef4dd536a8267.jpg",
+    "static/media/overcooked.jpg": "/static/media/overcooked.cbc704f0dd32c9c76286.jpg",
+    "static/media/halo.jpg": "/static/media/halo.7aedb982b5f3da29865e.jpg",
+    "static/media/amongus.jpg": "/static/media/amongus.7eb5a5f4ea8dac947cc1.jpg",
+    "static/media/diehard.jpg": "/static/media/diehard.46929a767611e55111b1.jpg",
+    "static/media/code.jpg": "/static/media/code.dfecba872fe857808abb.jpg",
+    "static/media/poke.jpg": "/static/media/poke.604a9bdfa352b2c61064.jpg",
+    "static/media/mario.jpg": "/static/media/mario.78791230d3cbde37b67f.jpg",
+    "static/media/ornament.jpg": "/static/media/ornament.10d3fb899f9f886edbca.jpg",
+    "static/media/chewy.jpg": "/static/media/chewy.fc5dee5d836173b15daf.jpg",
+    "static/media/santa.jpeg": "/static/media/santa.74d737cc97fd2036399b.jpeg",
+    "index.html": "/index.html",
+    "main.c696af19.css.map": "/static/css/main.c696af19.css.map",
+    "main.04dff0e4.js.map": "/static/js/main.04dff0e4.js.map",
+    "787.80fe2b25.chunk.js.map": "/static/js/787.80fe2b25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c696af19.css",
+    "static/js/main.04dff0e4.js"
+  ]
+}
