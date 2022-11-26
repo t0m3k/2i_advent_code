@@ -1,12 +1,13 @@
 {
   "name": "advent",
-  "hompage": "https://craigmcleod2i.github.io/adventof2i",
+  "homepage": "https://craigmcleod2i.github.io/2i_advent_code",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "deploy": "^1.0.3",
     "gh-pages": "^4.0.0",
     "papaparse": "^5.3.2",
     "react": "^18.2.0",
