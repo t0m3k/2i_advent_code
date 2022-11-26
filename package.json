@@ -1,6 +1,6 @@
 {
   "name": "advent",
-  "homepage": "https://craigmcleod2i.github.io/2i_advent_code",
+  "homepage": "https://craigmcleod2i.github.io/2i_advent_code/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

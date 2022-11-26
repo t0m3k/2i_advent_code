@@ -14,7 +14,7 @@ import mario from "./Card/CardAssets/mario.jpg";
 import lights from "./fairy-lights.jpg"
 import Card from "./Card/card";
 const shuffle = "WzQsMTUsMTcsMjYsOSwzMCwxMywxNiwxMiwyM11=";
-const days = [5, 8, 14, 6, 7, 2, 9, 12, 13, 1, 16, 15];
+const days = [5, 28, 14, 6, 7, 2, 29, 12, 13, 1, 16, 15];
 
 const pic = [
   ornament,
@@ -58,10 +58,11 @@ function App() {
             })
             .map((x, i) => (
               <Card 
+                key={i}
                 days={days}
                 pic={pic}
                 i={i}
-                currentCard={x}
+                currentCard={btoa(JSON.stringify(x))}
               />
             ))}
         </div>

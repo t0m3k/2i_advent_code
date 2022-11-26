@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 const Card = ({days, pic, i, currentCard}) => {
-    const month = 11
+    const month = 10
     return(
         <div
         className={`advent-card ${days[i] <= new Date().getDate() &&
@@ -28,7 +28,7 @@ const Card = ({days, pic, i, currentCard}) => {
         <p>
           {days[i] <= new Date().getDate() &&
           new Date().getMonth() === month
-            ? currentCard.challenge + ' - ' + currentCard.by 
+            ? JSON.parse(atob(currentCard)).challenge + ' - ' + JSON.parse(atob(currentCard)).by 
             : days[i]}
         </p>
       </div>
