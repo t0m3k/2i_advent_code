@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "2i Mini Advent of Code",
+  "short_name": "Mini Advent",
   "icons": [
     {
       "src": "favicon.ico",
