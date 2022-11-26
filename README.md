@@ -1,3 +1,5 @@
+<img src="./src/lightsGif.gif" data-canonical-src="./src/lightsGif.gif" width="50%" />
+
 # 2i Mini Advent of Code!
 
 Challenges will be released on weekdays between 1st and 14th December, and final submissions are due by the 16th.
