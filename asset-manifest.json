@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/2i_advent_code/static/css/main.c858c155.css",
-    "main.js": "/2i_advent_code/static/js/main.9e11ba67.js",
+    "main.js": "/2i_advent_code/static/js/main.3e052a33.js",
     "static/js/787.80fe2b25.chunk.js": "/2i_advent_code/static/js/787.80fe2b25.chunk.js",
     "static/media/fairy-lights.jpg": "/2i_advent_code/static/media/fairy-lights.e63747aef4dd536a8267.jpg",
     "static/media/overcooked.jpg": "/2i_advent_code/static/media/overcooked.cbc704f0dd32c9c76286.jpg",
@@ -16,11 +16,11 @@
     "static/media/santa.jpeg": "/2i_advent_code/static/media/santa.74d737cc97fd2036399b.jpeg",
     "index.html": "/2i_advent_code/index.html",
     "main.c858c155.css.map": "/2i_advent_code/static/css/main.c858c155.css.map",
-    "main.9e11ba67.js.map": "/2i_advent_code/static/js/main.9e11ba67.js.map",
+    "main.3e052a33.js.map": "/2i_advent_code/static/js/main.3e052a33.js.map",
     "787.80fe2b25.chunk.js.map": "/2i_advent_code/static/js/787.80fe2b25.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c858c155.css",
-    "static/js/main.9e11ba67.js"
+    "static/js/main.3e052a33.js"
   ]
 }

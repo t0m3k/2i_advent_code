@@ -4,7 +4,7 @@ Write a piece of code which executes a different piece of code written in a diff
 "Take any string in, and return it with all of its characters in alphabetical order",Scott Hamilton
 Produce a nullpointerexception using as few characters as possible,Dougmac
 Make the computer make a sound                                                                                                            ,Dougmac
-Return the number of days until Christmas,Scott Hamilton
+Work out how to override a method and use it to do something annoying/funny,Craig
 "Write a ""Hello World!"" program as convoluted as possible",Matthew G
 Write a bot which tells knock-knock jokes,Matthew G
 Make a game in 30 minutes or less,Craig
@@ -28,4 +28,4 @@ Matthew's decipher task,Matthew G
 Write code which simulates play your cards right (higher and lower next number in range N of set X),Dougmac
 Write a piece of code that solves for all anagrams of a given string (APIs allowed),Craig
 Write a piece of code that solves the numbers round of countdown,Craig
-Work out how to override a method and use it to do something annoying/funny,Craig
+Return the number of days until Christmas,Scott Hamilton
