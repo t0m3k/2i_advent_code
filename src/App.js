@@ -13,6 +13,7 @@ import halo from "./Card/CardAssets/halo.jpg";
 import mario from "./Card/CardAssets/mario.jpg";
 import lights from "./fairy-lights.jpg"
 import Card from "./Card/card";
+import csv from './Book.csv'
 const shuffle = "WzQsMTUsMTcsMjYsOSwzMCwxMywxNiwxMiwyM11=";
 const days = [5, 8, 14, 6, 7, 2, 9, 12, 13, 1, 16, 15];
 
@@ -33,7 +34,7 @@ function App() {
   const [days1, setDays] = useState();
   
   useEffect(() => {
-    fetch("./Book.csv")
+    fetch(csv)
       .then((csv) => csv.text())
       .then((resText) => {
         const parsed = Papa.parse(resText);
