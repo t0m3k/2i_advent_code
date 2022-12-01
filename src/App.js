@@ -11,9 +11,10 @@ import santa from "./Card/CardAssets/santa.jpeg";
 import overcooked from "./Card/CardAssets/overcooked.jpg";
 import halo from "./Card/CardAssets/halo.jpg";
 import mario from "./Card/CardAssets/mario.jpg";
-import lights from "./fairy-lights.jpg"
+import lights from "./fairy-lights.jpg";
 import Card from "./Card/card";
-import csv from './Book.csv'
+import csv from "./Book.csv";
+import Solutions from "./Components/Solutions";
 const shuffle = "WzQsMTUsMTcsMjYsOSwzMCwxMywxNiwxMiwyM11=";
 const days = [5, 8, 14, 6, 7, 2, 9, 12, 13, 1, 16, 15];
 
@@ -32,7 +33,7 @@ const pic = [
 
 function App() {
   const [days1, setDays] = useState();
-  
+
   useEffect(() => {
     fetch(csv)
       .then((csv) => csv.text())
@@ -52,22 +53,41 @@ function App() {
   if (days1)
     return (
       <div className="App">
-        <div id="advent-calendar" style={{backgroundImage: `url("${lights}")`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div
+          id="advent-calendar"
+          style={{
+            backgroundImage: `url("${lights}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           {days1
             .filter((el, i) => {
               return JSON.parse(atob(shuffle)).includes(i + 1);
             })
-            .map((x, i) => (
-              <Card 
-                key={i}
-                days={days}
-                pic={pic}
-                i={i}
-                currentCard={btoa(JSON.stringify(x))}
-              />
-            ))}
+            .map((x, i) => {
+              const ChristmasChard = Solutions[days[i] - 1]
+                ? Solutions[days[i] - 1]
+                : Card;
+              return (
+                <ChristmasChard
+                  days={days}
+                  pic={pic}
+                  i={i}
+                  key={i}
+                  currentCard={btoa(JSON.stringify(x))}
+                />
+              );
+            })}
         </div>
-        <a id='submit-link' href='https://github.com/CraigMcleod2i/2i_advent_code' target='_blank'>Submit by adding a branch to this repo</a>
+        <a
+          id="submit-link"
+          href="https://github.com/CraigMcleod2i/2i_advent_code"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Submit by adding a branch to this repo
+        </a>
       </div>
     );
 }
