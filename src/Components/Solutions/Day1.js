@@ -3,7 +3,10 @@ import React, { useMemo } from "react";
 const Day1 = () => {
   const days = useMemo(
     () =>
-      Math.ceil((new Date(2022, 11, 25) - new Date()) / (1000 * 60 * 60 * 24)),
+      Math.ceil(
+        (new Date(new Date().getFullYear(), 11, 25) - new Date()) /
+          (1000 * 60 * 60 * 24)
+      ),
     []
   );
   return (
