@@ -4,8 +4,11 @@ const Day2 = () => {
     <div className="advent-card">
       <div>
         <h1 className="text-3xl">Day 2</h1>
-        <CssCube />
-        <CssCube />
+        <p>Pair of rollin' dice</p>
+        <div className="flex">
+          <CssCube />
+          <CssCube />
+        </div>
       </div>
     </div>
   );
@@ -13,7 +16,7 @@ const Day2 = () => {
 
 const CssCube = () => {
   return (
-    <div className="scene">
+    <div className="scene mx-5">
       <div className="cube">
         <div className="cube__face cube__face--front">1</div>
         <div className="cube__face cube__face--back">2</div>

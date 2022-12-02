@@ -19,11 +19,13 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  background-color: #fff;
+  background-color: beige;
   border-color: dimgray;
   border-radius: 10px;
   border-style: solid;
   border-width: 3px;
+  display: grid;
+  align-content: center;
 }
 
 .cube__face--front {
