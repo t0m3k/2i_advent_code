@@ -73,7 +73,7 @@
     transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
   }
   to {
-    transform: translateZ(0px) rotateY(360deg) rotateZ(810deg);
+    transform: translateZ(0px) rotateY(450deg) rotateZ(900deg);
   }
 }
 
@@ -91,7 +91,7 @@
     transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
   }
   to {
-    transform: translateZ(0px) rotateY(450deg) rotateZ(450deg);
+    transform: translateZ(0px) rotateY(270deg) rotateZ(810deg);
   }
 }
 
