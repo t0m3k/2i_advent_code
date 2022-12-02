@@ -6,24 +6,32 @@ const Day2 = () => {
         <h1 className="text-3xl">Day 2</h1>
         <p>Pair of rollin' dice</p>
         <div className="flex">
-          <CssCube />
-          <CssCube />
+          <CssCube show={Math.floor(Math.random() * 6 + 1)} />
+          <CssCube show={Math.floor(Math.random() * 6 + 1)} />
         </div>
       </div>
     </div>
   );
 };
 
-const CssCube = () => {
+const CssCube = ({ show }) => {
   return (
     <div className="scene mx-5">
-      <div className="cube">
-        <div className="cube__face cube__face--front">1</div>
-        <div className="cube__face cube__face--back">2</div>
-        <div className="cube__face cube__face--right">3</div>
-        <div className="cube__face cube__face--left">4</div>
-        <div className="cube__face cube__face--top">5</div>
-        <div className="cube__face cube__face--bottom">6</div>
+      <div className={show ? "cube show-" + show : "cube"}>
+        <div className="cube__face cube__face--1">*</div>
+        <div className="cube__face cube__face--2">* *</div>
+        <div className="cube__face cube__face--3">* * *</div>
+        <div className="cube__face cube__face--4">
+          * *<br />* *
+        </div>
+        <div className="cube__face cube__face--5">
+          * *<br />*<br />* *
+        </div>
+        <div className="cube__face cube__face--6">
+          ***
+          <br />
+          ***
+        </div>
       </div>
     </div>
   );

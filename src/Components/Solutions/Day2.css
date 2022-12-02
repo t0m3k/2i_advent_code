@@ -9,10 +9,9 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-name: rotate360;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
 .cube__face {
@@ -28,34 +27,98 @@
   align-content: center;
 }
 
-.cube__face--front {
+.cube__face--1 {
   transform: rotateY(0deg) translateZ(30px);
 }
-.cube__face--right {
+.cube__face--3 {
   transform: rotateY(90deg) translateZ(30px);
 }
-.cube__face--back {
+.cube__face--2 {
   transform: rotateY(180deg) translateZ(30px);
 }
-.cube__face--left {
+.cube__face--4 {
   transform: rotateY(-90deg) translateZ(30px);
 }
-.cube__face--top {
+.cube__face--5 {
   transform: rotateX(90deg) translateZ(30px);
 }
-.cube__face--bottom {
+.cube__face--6 {
   transform: rotateX(-90deg) translateZ(30px);
 }
 
 .cube {
-  transform: translateZ(-100px);
+  transform: translateZ(-200px);
 }
 
-@keyframes rotate360 {
+@keyframes rotate1 {
   from {
-    transform: translateZ(-200px) rotateY(0deg) rotateZ(0deg);
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
   }
   to {
-    transform: translateZ(-200px) rotateY(360deg) rotateZ(360deg);
+    transform: translateZ(0px) rotateY(360deg) rotateZ(720deg);
   }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(0px) rotateY(540deg) rotateZ(720deg);
+  }
+}
+
+@keyframes rotate3 {
+  from {
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(0px) rotateY(360deg) rotateZ(810deg);
+  }
+}
+
+@keyframes rotate4 {
+  from {
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(0px) rotateY(450deg) rotateZ(720deg);
+  }
+}
+
+@keyframes rotate5 {
+  from {
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(0px) rotateY(450deg) rotateZ(450deg);
+  }
+}
+
+@keyframes rotate6 {
+  from {
+    transform: translateZ(-500px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(0px) rotateY(450deg) rotateZ(810deg);
+  }
+}
+
+.cube.show-1 {
+  animation-name: rotate1;
+}
+.cube.show-2 {
+  animation-name: rotate2;
+}
+.cube.show-3 {
+  animation-name: rotate3;
+}
+.cube.show-4 {
+  animation-name: rotate4;
+}
+.cube.show-5 {
+  animation-name: rotate5;
+}
+.cube.show-6 {
+  animation-name: rotate6;
 }
