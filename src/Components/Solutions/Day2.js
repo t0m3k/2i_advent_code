@@ -32,7 +32,7 @@ const Day2 = () => {
 
 const CssCube = ({ show }) => {
   return (
-    <div className="scene mx-5">
+    <div className="scene leading-3 mx-5">
       <div className={show ? "cube show-" + show : "cube"}>
         <div className="cube__face cube__face--1">*</div>
         <div className="cube__face cube__face--2">* *</div>
