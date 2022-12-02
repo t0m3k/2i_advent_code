@@ -4,7 +4,7 @@
   perspective: 500px;
 }
 
-.cube {
+.dice {
   width: 100%;
   height: 100%;
   position: relative;
@@ -12,9 +12,10 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+  transform: translateZ(-200px);
 }
 
-.cube__face {
+.dice_face {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -27,27 +28,23 @@
   align-content: center;
 }
 
-.cube__face--1 {
+.dice_face--1 {
   transform: rotateY(0deg) translateZ(30px);
 }
-.cube__face--3 {
+.dice_face--3 {
   transform: rotateY(90deg) translateZ(30px);
 }
-.cube__face--2 {
+.dice_face--2 {
   transform: rotateY(180deg) translateZ(30px);
 }
-.cube__face--4 {
+.dice_face--4 {
   transform: rotateY(-90deg) translateZ(30px);
 }
-.cube__face--5 {
+.dice_face--5 {
   transform: rotateX(90deg) translateZ(30px);
 }
-.cube__face--6 {
+.dice_face--6 {
   transform: rotateX(-90deg) translateZ(30px);
-}
-
-.cube {
-  transform: translateZ(-200px);
 }
 
 @keyframes rotate1 {
@@ -104,21 +101,21 @@
   }
 }
 
-.cube.show-1 {
+.dice.show-1 {
   animation-name: rotate1;
 }
-.cube.show-2 {
+.dice.show-2 {
   animation-name: rotate2;
 }
-.cube.show-3 {
+.dice.show-3 {
   animation-name: rotate3;
 }
-.cube.show-4 {
+.dice.show-4 {
   animation-name: rotate4;
 }
-.cube.show-5 {
+.dice.show-5 {
   animation-name: rotate5;
 }
-.cube.show-6 {
+.dice.show-6 {
   animation-name: rotate6;
 }

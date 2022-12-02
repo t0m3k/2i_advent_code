@@ -22,36 +22,36 @@ const Day2 = () => {
         <h1 className="text-3xl">Day 2</h1>
         <p>Pair of rollin' dice</p>
         <div className="flex">
-          <CssCube show={dice1} />
-          <CssCube show={dice2} />
+          <Dice show={dice1} />
+          <Dice show={dice2} />
         </div>
       </div>
     </div>
   );
 };
 
-const CssCube = ({ show }) => {
+const Dice = ({ show }) => {
   return (
     <div className="scene leading-3 mx-5">
-      <div className={show ? "cube show-" + show : "cube"}>
-        <div className="cube__face cube__face--1">
+      <div className={show ? "dice show-" + show : "dice"}>
+        <div className="dice_face dice_face--1">
           <Dot />
         </div>
-        <div className="cube__face cube__face--2">
+        <div className="dice_face dice_face--2">
           <div className="rotate-45 content-center grid">
             <Dot />
             <div className="m-auto w-2 h-2 m-1" />
             <Dot />
           </div>
         </div>
-        <div className="cube__face cube__face--3">
+        <div className="dice_face dice_face--3">
           <div className="rotate-45 content-center grid">
             <Dot />
             <Dot />
             <Dot />
           </div>
         </div>
-        <div className="cube__face cube__face--4 grid-cols-2 ">
+        <div className="dice_face dice_face--4 grid-cols-2 ">
           <div className="content-center grid absolute top-[3px] left-[18px] -rotate-45">
             <Dot />
             <div className="m-auto w-2 h-2 m-1" />
@@ -63,7 +63,7 @@ const CssCube = ({ show }) => {
             <Dot />
           </div>
         </div>
-        <div className="cube__face cube__face--5">
+        <div className="dice_face dice_face--5">
           <div className="content-center grid absolute top-[3px] left-[18px] -rotate-45">
             <Dot />
             <Dot />
@@ -75,7 +75,7 @@ const CssCube = ({ show }) => {
             <Dot />
           </div>
         </div>
-        <div className="cube__face cube__face--6">
+        <div className="dice_face dice_face--6">
           <div className="content-center flex mb-2">
             <Dot />
             <Dot />
