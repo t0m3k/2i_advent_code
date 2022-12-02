@@ -34,23 +34,62 @@ const CssCube = ({ show }) => {
   return (
     <div className="scene leading-3 mx-5">
       <div className={show ? "cube show-" + show : "cube"}>
-        <div className="cube__face cube__face--1">*</div>
-        <div className="cube__face cube__face--2">* *</div>
-        <div className="cube__face cube__face--3">* * *</div>
-        <div className="cube__face cube__face--4">
-          * *<br />* *
+        <div className="cube__face cube__face--1">
+          <Dot />
+        </div>
+        <div className="cube__face cube__face--2">
+          <Dot />
+          <Dot />
+        </div>
+        <div className="cube__face cube__face--3">
+          <Dot />
+          <Dot />
+          <Dot />
+        </div>
+        <div className="cube__face cube__face--4 grid-cols-2 ">
+          <div className="content-center grid">
+            <Dot />
+            <Dot />
+          </div>
+          <div className="content-center grid">
+            <Dot />
+            <Dot />
+          </div>
         </div>
         <div className="cube__face cube__face--5">
-          * *<br />*<br />* *
+          <div className="content-center flex">
+            <Dot />
+            <Dot />
+          </div>
+          <div className="content-center flex">
+            <Dot />
+          </div>
+          <div className="content-center flex">
+            <Dot />
+            <Dot />
+          </div>
         </div>
         <div className="cube__face cube__face--6">
-          ***
-          <br />
-          ***
+          <div className="content-center flex mb-2">
+            <Dot />
+            <Dot />
+            <Dot />
+          </div>
+          <div className="content-center flex">
+            <Dot />
+            <Dot />
+            <Dot />
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
+const Dot = () => {
+  return (
+    <div className="m-auto">
+      <div className="w-2 h-2 bg-red-700 rounded-full border-red-700 m-1"></div>
+    </div>
+  );
+};
 export default Day2;
