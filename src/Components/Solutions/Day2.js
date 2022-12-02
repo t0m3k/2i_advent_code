@@ -38,33 +38,39 @@ const CssCube = ({ show }) => {
           <Dot />
         </div>
         <div className="cube__face cube__face--2">
-          <Dot />
-          <Dot />
+          <div className="rotate-45 content-center grid">
+            <Dot />
+            <div className="m-auto w-2 h-2 m-1" />
+            <Dot />
+          </div>
         </div>
         <div className="cube__face cube__face--3">
-          <Dot />
-          <Dot />
-          <Dot />
-        </div>
-        <div className="cube__face cube__face--4 grid-cols-2 ">
-          <div className="content-center grid">
+          <div className="rotate-45 content-center grid">
+            <Dot />
             <Dot />
             <Dot />
           </div>
-          <div className="content-center grid">
+        </div>
+        <div className="cube__face cube__face--4 grid-cols-2 ">
+          <div className="content-center grid absolute top-[3px] left-[18px] -rotate-45">
             <Dot />
+            <div className="m-auto w-2 h-2 m-1" />
+            <Dot />
+          </div>
+          <div className="content-center grid absolute top-[3px] left-[18px] rotate-45">
+            <Dot />
+            <div className="m-auto w-2 h-2 m-1" />
             <Dot />
           </div>
         </div>
         <div className="cube__face cube__face--5">
-          <div className="content-center flex">
+          <div className="content-center grid absolute top-[3px] left-[18px] -rotate-45">
             <Dot />
             <Dot />
-          </div>
-          <div className="content-center flex">
             <Dot />
           </div>
-          <div className="content-center flex">
+          <div className="content-center grid absolute top-[3px] left-[18px] rotate-45">
+            <Dot />
             <Dot />
             <Dot />
           </div>
