@@ -12,7 +12,7 @@ const Day1 = () => {
   return (
     <div className="advent-card">
       <div>
-        <h1 className="text-4xl">Day 1</h1>
+        <h1 className="text-3xl">Day 1</h1>
         <p className="text-lg">
           There are {days} days until{" "}
           <span className="text-red-700">Christmas</span>
