@@ -6,8 +6,7 @@ const Day3 = () => {
       <div>
         <h1 className="text-3xl">Day 3</h1>
         <p className="text-lg">
-          <span className="text-blue-600">throw new</span>{" "}
-          NullPointerException();
+          <span className="text-blue-600">throw</span> null;
         </p>
       </div>
     </div>
