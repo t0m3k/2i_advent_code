@@ -4,7 +4,7 @@ const Day5 = () => {
   const [text, setText] = React.useState("");
 
   const points = text.split("").reduce((acc, letter) => {
-    return acc + letterValues[letter.toLowerCase()];
+    return acc + (letterValues[letter.toLowerCase()] || 0);
   }, 0);
 
   return (
