@@ -1,7 +1,7 @@
 import React from "react";
 
 const Day5 = () => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState("Merry Xmas!");
 
   const points = text.split("").reduce((acc, letter) => {
     return acc + (letterValues[letter.toLowerCase()] || 0);
@@ -17,8 +17,9 @@ const Day5 = () => {
           ))}
         </div>
         <input
-          className="bg-none mt-2 rounded px-2"
+          className="bg-inherit mt-2 text-center rounded px-2 border-dashed border-2 border-red-700 w-full focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent"
           type="text"
+          value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </div>
@@ -59,7 +60,9 @@ const letterValues = {
 const ScrabbleLetter = ({ letter }) => {
   return (
     <div className="flex flex-col items-center pt-2 bg-white w-5 mx-[1px] border border-black rounded">
-      <div className="text-3xl mb-0 leading-3">{letter.toUpperCase()}</div>
+      <div className="text-3xl mb-0 leading-3 text-red-700">
+        {letter.toUpperCase()}
+      </div>
       <div className="text-sm ">{letterValues[letter.toLowerCase()]}</div>
     </div>
   );
