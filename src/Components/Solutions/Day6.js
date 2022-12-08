@@ -15,7 +15,9 @@ class Santa {
 
   draw(ctx) {
     if (this.snowflakes.length < 20 && Math.random() > 0.95) {
-      this.snowflakes.push(new Snowflake(200, Math.floor(Math.random() * 80)));
+      this.snowflakes.push(
+        new Snowflake(200, Math.floor(Math.random() * 60 + 20))
+      );
     }
     this.snowflakes = this.snowflakes.filter((snowflake) => {
       snowflake.draw(ctx);
