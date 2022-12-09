@@ -1,13 +1,16 @@
 import React from "react";
 
 const width = 400;
-const height = 115;
+const height = 110;
 class Santa {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+  constructor(x) {
+    this.size = x;
+    this.x = 25;
+    this.y = 80;
     this.verticalSpeed = 0;
     this.snowflakes = [];
+    this.points = 0;
+    this.life = 15;
   }
 
   jump() {
@@ -16,26 +19,31 @@ class Santa {
   }
 
   draw(ctx) {
-    if (this.snowflakes.length < 40 && Math.random() > 0.98) {
+    if (this.snowflakes.length < 40 && Math.random() > 0.97) {
       this.snowflakes.push(
-        new Snowflake(width, Math.floor(Math.random() * height - 25))
+        new Snowflake(width, Math.floor(Math.random() * (height - 25) + 5))
       );
     }
     this.snowflakes = this.snowflakes.filter((snowflake) => {
       snowflake.draw(ctx);
+
       snowflake.frame();
 
       if (
-        snowflake.x < this.x + 5 &&
-        snowflake.x > this.x - 5 &&
-        snowflake.y < this.y + 5 &&
-        snowflake.y > this.y - 5
+        snowflake.x < this.x + this.size / 2 &&
+        snowflake.x > this.x - this.size / 2 &&
+        snowflake.y < this.y + this.size / 2 &&
+        snowflake.y > this.y - this.size / 2
       ) {
         const points = document.getElementById("points");
-        points.innerText = parseInt(points.innerText) + 1;
+        this.points += 1;
+        points.innerText = this.points;
         return false;
       }
       if (snowflake.x < 0) {
+        const life = document.getElementById("life");
+        this.life -= 1;
+        life.innerText = this.life;
         return false;
       }
       return true;
@@ -43,7 +51,7 @@ class Santa {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.beginPath();
-    ctx.arc(0, 0, 5, 0, 2 * Math.PI);
+    ctx.arc(0, 0, 10, 0, 2 * Math.PI);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.restore();
@@ -64,7 +72,7 @@ class Snowflake {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.horizontalSpeed = 0.5;
+    this.horizontalSpeed = 0.3;
   }
 
   draw(ctx) {
@@ -124,12 +132,10 @@ const Day6 = () => {
   return (
     <div className="advent-card">
       <div>
+        <p className="text-md">Flappy Santa. Use the W key or click to jump</p>
         <p className="text-md">
-          Flappy Santa but I had no time to do it properly. Use the W key or
-          click to jump
-        </p>
-        <p className="text-md">
-          Total: <span id="points">0</span>
+          Total: <span id="points">0</span>. Life:{" "}
+          <span id="life">{santa.life}</span>
         </p>
         <div className="flex"></div>
         <canvas
