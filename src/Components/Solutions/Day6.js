@@ -10,7 +10,7 @@ class Santa {
 
   jump() {
     this.verticalSpeed = -2;
-    this.y -= 3;
+    this.y -= 2;
   }
 
   draw(ctx) {
@@ -84,12 +84,20 @@ const santa = new Santa(25, 80);
 
 const Day6 = () => {
   const canvasRef = React.useRef(null);
-
-  // add event listener for space
   React.useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === " ") {
+        santa.jump();
+      }
+    });
+
+    window.addEventListener("click", () => {
+      santa.jump();
+    });
+
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", () => {});
+      window.removeEventListener("click", () => {});
     };
   }, []);
 
@@ -110,12 +118,6 @@ const Day6 = () => {
   React.useEffect(() => {
     requestAnimationFrame(tick);
   }, []);
-
-  const handleKeyDown = (e) => {
-    if (e.key !== " ") return;
-    santa.jump();
-    console.log("jumped");
-  };
 
   return (
     <div className="advent-card">
