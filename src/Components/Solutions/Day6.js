@@ -1,11 +1,11 @@
 import React from "react";
 
-const width = 400;
+const width = 395;
 const height = 110;
 class Santa {
   constructor(x) {
     this.size = x;
-    this.x = 25;
+    this.x = 40;
     this.y = 80;
     this.verticalSpeed = 0;
     this.snowflakes = [];
@@ -35,9 +35,8 @@ class Santa {
         snowflake.y < this.y + this.size / 2 &&
         snowflake.y > this.y - this.size / 2
       ) {
-        const points = document.getElementById("points");
         this.points += 1;
-        points.innerText = this.points;
+        document.getElementById("points").innerText = this.points;
         return false;
       }
       if (snowflake.x < 0) {
@@ -48,49 +47,76 @@ class Santa {
       }
       return true;
     });
+    // draw santa claus
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.beginPath();
-    ctx.arc(0, 0, 10, 0, 2 * Math.PI);
+    ctx.arc(0, 0, this.size / 2, 0, 2 * Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(-this.size / 4, -this.size / 4, this.size / 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(this.size / 4, -this.size / 4, this.size / 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(-this.size / 4, this.size / 8);
+    ctx.lineTo(this.size / 4, this.size / 8);
+    ctx.lineTo(0, this.size / 4);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.restore();
   }
 
   frame() {
-    if (this.y <= height - 10) {
+    if (this.y <= height - this.size / 2) {
       this.verticalSpeed += 0.1;
       this.y += this.verticalSpeed;
     } else {
-      this.y = height - 10;
-      this.verticalSpeed = 0;
+      if (this.verticalSpeed !== 0) {
+        this.verticalSpeed = -this.verticalSpeed * 0.8;
+      }
+      this.y = height - this.size / 2;
     }
   }
 }
 
 class Snowflake {
-  constructor(x, y) {
+  explode = false;
+  size = 2;
+  constructor(x, y, horizontalSpeed = 0.3) {
     this.x = x;
     this.y = y;
-    this.horizontalSpeed = 0.3;
+    this.horizontalSpeed = horizontalSpeed;
   }
 
   draw(ctx) {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.beginPath();
-    ctx.arc(0, 0, 2, 0, 2 * Math.PI);
-    ctx.fillStyle = "white";
+    ctx.arc(0, 0, this.size, 0, 2 * Math.PI);
+    ctx.fillStyle = this.explode ? "red" : "white";
     ctx.fill();
     ctx.restore();
   }
 
   frame() {
+    if (this.x < 20 && !this.explode) {
+      this.explode = true;
+    }
+
+    if (this.explode) {
+      this.horizontalSpeed = 0.15;
+      this.size += 0.1;
+    }
     this.x -= this.horizontalSpeed;
   }
 }
 
-const santa = new Santa(25, 80);
+const santa = new Santa(20);
 
 const Day6 = () => {
   const canvasRef = React.useRef(null);
