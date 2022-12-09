@@ -7,16 +7,13 @@
   font-weight: 800;
 }
 
+body {
+  background: linear-gradient(to bottom right, rgb(11, 24, 9), rgb(21, 43, 16));
+}
+
 .App {
   text-align: center;
   width: 100%;
-  height: 100%;
-  display: flex;
-  position: fixed;
-  background: linear-gradient(to bottom right, rgb(11, 24, 9), rgb(21, 43, 16));
-  flex-wrap: wrap;
-  cursor: grab;
-  flex-direction: column;
 }
 
 .App-logo {
@@ -54,14 +51,11 @@
   }
 }
 #advent-calendar {
-  width: 40vw;
-  min-width: 365px;
-  max-width: 65vh;
-  min-height: 600px;
-  max-height: 900px;
+  min-width: 450px;
+  max-width: 900px;
   background-color: rgb(117, 27, 16);
   margin: auto;
-  height: 80%;
+  margin-bottom: 2.6rem;
   border-radius: 0.4rem;
   display: flex;
   flex-direction: row;
@@ -72,9 +66,10 @@
   background-position: center;
 }
 .advent-card {
-  width: 45%;
-  height: 18%;
+  width: 400px;
+  height: 200px;
   margin: auto;
+  margin-bottom: 0.6rem;
   box-sizing: border-box;
   background-color: wheat;
   border-radius: 0.4rem;

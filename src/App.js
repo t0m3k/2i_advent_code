@@ -81,6 +81,7 @@ function App() {
             })}
         </div>
         <a
+          className="mt-20"
           id="submit-link"
           href="https://github.com/CraigMcleod2i/2i_advent_code"
           target="_blank"
