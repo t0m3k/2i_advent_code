@@ -1,5 +1,7 @@
 import React from "react";
 
+const width = 400;
+const height = 115;
 class Santa {
   constructor(x, y) {
     this.x = x;
@@ -14,9 +16,9 @@ class Santa {
   }
 
   draw(ctx) {
-    if (this.snowflakes.length < 20 && Math.random() > 0.95) {
+    if (this.snowflakes.length < 40 && Math.random() > 0.98) {
       this.snowflakes.push(
-        new Snowflake(200, Math.floor(Math.random() * 80 - 20))
+        new Snowflake(width, Math.floor(Math.random() * height - 25))
       );
     }
     this.snowflakes = this.snowflakes.filter((snowflake) => {
@@ -48,11 +50,11 @@ class Santa {
   }
 
   frame() {
-    if (this.y <= 80) {
+    if (this.y <= height - 10) {
       this.verticalSpeed += 0.1;
       this.y += this.verticalSpeed;
     } else {
-      this.y = 80;
+      this.y = height - 10;
       this.verticalSpeed = 0;
     }
   }
@@ -86,7 +88,7 @@ const Day6 = () => {
   const canvasRef = React.useRef(null);
   React.useEffect(() => {
     window.addEventListener("keydown", (e) => {
-      if (e.key === " ") {
+      if (e.key === "w") {
         santa.jump();
       }
     });
@@ -122,11 +124,20 @@ const Day6 = () => {
   return (
     <div className="advent-card">
       <div>
-        <p className="text-lg">
+        <p className="text-md">
+          Flappy Santa but I had no time to do it properly. Use the W key or
+          click to jump
+        </p>
+        <p className="text-md">
           Total: <span id="points">0</span>
         </p>
         <div className="flex"></div>
-        <canvas ref={canvasRef} id="canvas" width="250" height="85"></canvas>
+        <canvas
+          ref={canvasRef}
+          id="canvas"
+          width={width}
+          height={height}
+        ></canvas>
       </div>
     </div>
   );
