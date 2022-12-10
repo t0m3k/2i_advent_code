@@ -5,24 +5,53 @@ const height = 110;
 class Santa {
   constructor(x) {
     this.size = x;
-    this.x = 40;
-    this.y = 80;
+    this.x = 60;
+    this.y = 0;
     this.verticalSpeed = 0;
     this.snowflakes = [];
     this.points = 0;
-    this.life = 15;
+    this.life = 100;
+    this.gravity = 0.02;
+    this.jumpSpeed = 0.8;
+    this.startTime = Date.now();
+    this.snowflakePosition = height / 2;
+    this.snowflakeMaxPosition = height - 25;
+    this.snowflakeMinPosition = 5;
   }
 
   jump() {
-    this.verticalSpeed = -2;
-    this.y -= 2;
+    this.verticalSpeed = -this.jumpSpeed;
+  }
+
+  randomizeSnowflakePosition() {
+    const newPosition = this.snowflakePosition + Math.random() * 20 - 10;
+    if (newPosition > this.snowflakeMaxPosition) {
+      this.snowflakePosition = this.snowflakeMaxPosition;
+    } else if (newPosition < this.snowflakeMinPosition) {
+      this.snowflakePosition = this.snowflakeMinPosition;
+    } else {
+      this.snowflakePosition = newPosition;
+    }
+  }
+
+  newSnowflake() {
+    this.randomizeSnowflakePosition();
+    const time = Date.now() - this.startTime;
+    const horizontalSpeed = Math.min(0.3 + time / 50000, 5);
+    this.snowflakes.push(
+      new Snowflake(width, this.snowflakePosition, horizontalSpeed)
+    );
   }
 
   draw(ctx) {
-    if (this.snowflakes.length < 40 && Math.random() > 0.97) {
-      this.snowflakes.push(
-        new Snowflake(width, Math.floor(Math.random() * (height - 25) + 5))
-      );
+    if (this.life <= 0) {
+      ctx.fillStyle = "red";
+      ctx.font = "30px Arial";
+      ctx.fillText("Xmas Over", 10, 50);
+      return;
+    }
+    if (this.snowflakes.length < 100 && Math.random() > 0.95) {
+      this.newSnowflake();
     }
     this.snowflakes = this.snowflakes.filter((snowflake) => {
       snowflake.draw(ctx);
@@ -40,32 +69,21 @@ class Santa {
         return false;
       }
       if (snowflake.x < 0) {
-        const life = document.getElementById("life");
         this.life -= 1;
-        life.innerText = this.life;
         return false;
       }
+      document.getElementById("life").innerText = this.life;
       return true;
     });
-    // draw santa claus
+    this.santa(ctx);
+  }
+
+  santa(ctx) {
+    // draw red circle
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.beginPath();
     ctx.arc(0, 0, this.size / 2, 0, 2 * Math.PI);
-    ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(-this.size / 4, -this.size / 4, this.size / 8, 0, 2 * Math.PI);
-    ctx.fillStyle = "black";
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(this.size / 4, -this.size / 4, this.size / 8, 0, 2 * Math.PI);
-    ctx.fillStyle = "black";
-    ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(-this.size / 4, this.size / 8);
-    ctx.lineTo(this.size / 4, this.size / 8);
-    ctx.lineTo(0, this.size / 4);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.restore();
@@ -73,11 +91,11 @@ class Santa {
 
   frame() {
     if (this.y <= height - this.size / 2) {
-      this.verticalSpeed += 0.1;
+      this.verticalSpeed += this.gravity;
       this.y += this.verticalSpeed;
     } else {
-      if (this.verticalSpeed !== 0) {
-        this.verticalSpeed = -this.verticalSpeed * 0.8;
+      if (this.verticalSpeed > 0.3) {
+        this.verticalSpeed = -this.verticalSpeed * 0.4;
       }
       this.y = height - this.size / 2;
     }
@@ -109,14 +127,14 @@ class Snowflake {
     }
 
     if (this.explode) {
-      this.horizontalSpeed = 0.15;
-      this.size += 0.1;
+      this.horizontalSpeed = 0.2;
+      this.size += 0.05;
     }
     this.x -= this.horizontalSpeed;
   }
 }
 
-const santa = new Santa(20);
+const santa = new Santa(30);
 
 const Day6 = () => {
   const canvasRef = React.useRef(null);
